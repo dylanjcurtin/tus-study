@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - fonts/
+
+website:
+  title: "Ultrasound & mood study"
+  site-url: https://dylanjcurtin.github.io/tus-study
+  description: "A paid neuroscience research study at the University of Plymouth using MRI and non-invasive ultrasound brain stimulation."
+  navbar:
+    pinned: true
+    left:
+      - text: "About"
+        href: index.qmd
+      - text: "Planning your visit"
+        href: before-your-visit.qmd
+      - text: "Finding us"
+        href: finding-us.qmd
+      - text: "How to take part"
+        href: contact.qmd
+    right:
+      - text: "Information sheet"
+        href: assets/info_sheet_v3.pdf
+        icon: file-earmark-pdf
+  page-footer:
+    left: "University of Plymouth · Funded by the European Union (MSCA grant 101280507) · Ethics ref 6295 · [Information sheet](assets/info_sheet_v3.pdf)"
+    right: "Updated {{< meta date-modified >}}"
+
+format:
+  html:
+    theme: [default, custom.scss]
+    css: styles.css
+    lightbox: true
+    toc: false
+    link-external-newwindow: true
+    date-modified: last-modified
+    # Remove the next three lines once ethics has approved the site, so search engines can list it
+    include-in-header:
+      text: '<meta name="robots" content="noindex, nofollow">'

@@ -1,0 +1,125 @@
+/*-- scss:defaults --*/
+
+// Monochrome palette, after the land-book references
+$ink:     #191919;   // headings, buttons
+$body:    #3a3a3a;   // body text
+$muted:   #7b7b7b;   // secondary text, labels
+$line:    #e8e8e8;   // hairlines
+$page:    #f7f7f7;   // page background
+$card:    #ffffff;   // cards
+$pill:    #efefef;   // light pill backgrounds
+$accent:  #c2410c;   // dark orange-red accent
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-size-base: 1.05rem;
+$line-height-base: 1.6;
+$headings-font-weight: 500;
+$headings-color: $ink;
+$body-color: $body;
+$body-bg: $page;
+
+$primary:   $ink;
+$secondary: $muted;
+$link-color: $ink;
+$link-hover-color: $muted;
+$link-decoration: underline;
+$link-underline-offset: 0.15em;
+
+$navbar-bg: $page;
+$navbar-fg: $muted;
+$navbar-hl: $ink;
+$navbar-padding-y: 1rem;
+
+$border-radius: 12px;
+$btn-border-radius: 999px;
+$btn-border-radius-lg: 999px;
+$btn-padding-x: 1.25rem;
+$btn-padding-x-lg: 1.5rem;
+$btn-font-weight: 500;
+
+/*-- scss:rules --*/
+// Navbar: airy, no bar, brand in a soft pill
+.navbar { box-shadow: none; }
+.navbar-brand { font-weight: 500; color: $ink; background: $pill; padding: 0.4rem 0.8rem; border-radius: 10px; font-size: 0.95rem; }
+.navbar .nav-link { font-weight: 500; font-size: 0.95rem; }
+.navbar .nav-link.active { color: $ink; font-weight: 600; box-shadow: inset 0 -2px 0 $accent; }
+.navbar .nav-link:hover { color: $ink; }
+.navbar .quarto-navbar-tools .quarto-navigation-tool { color: $muted; }
+
+// Title block
+#title-block-header.quarto-title-block.default .quarto-title-meta { display: none; }
+#title-block-header { margin-top: 2rem; }
+h1.title { font-size: 2.6rem; line-height: 1.15; letter-spacing: -0.02em; font-weight: 500; margin-bottom: 1.25rem; max-width: 20ch; }
+h2 { border-bottom: none; margin-top: 2.75rem; margin-bottom: 0.75rem; font-size: 1.35rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.05rem; }
+p { max-width: 64ch; }
+strong { color: $ink; font-weight: 600; }
+a:hover { text-decoration: underline; }
+
+// Pill buttons: black primary, grey secondary
+.btn { border-radius: 999px; }
+.btn-primary { background: $ink; border-color: $ink; color: #fff; }
+.btn-primary:hover { background: #000; border-color: #000; color: #fff; text-decoration: none; }
+.btn-outline-secondary { background: $pill; border-color: $pill; color: $ink; }
+.btn-outline-secondary:hover { background: #e4e4e4; border-color: #e4e4e4; color: $ink; text-decoration: none; }
+.btn-lg { padding: 0.7rem 1.5rem; font-size: 1rem; }
+
+// Cards
+.step { background: $card; border: 1px solid $line; border-radius: 16px; }
+.step .num { color: $accent; display: block; }
+.step { border-top: 3px solid $accent; }
+.step h3 { color: $ink; font-weight: 500; }
+
+// Callouts and figures
+.callout { border-radius: 12px; background: $card; }
+.callout.callout-style-default { border-left-width: 2px; border-left-color: $line !important; }
+.callout-note.callout-style-default > .callout-header { background: $card; }
+figcaption { color: $muted; font-size: 0.9rem; }
+.map-frame { border: 1px solid $line; border-radius: 16px; background: $card; }
+
+// Footer
+.nav-footer { background: $page; border-top: 1px solid $line; color: $muted; font-size: 0.85rem; }
+.nav-footer a { color: $muted; }
+
+// Funding and partner logos
+.logo-row { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0 1rem; }
+.logo-row .quarto-figure, .logo-row figure, .logo-row p { margin: 0; }
+.logo-row figcaption { display: none; }
+.logo-row img { border: 0; border-radius: 0; background: transparent; }
+.logo-row img.logo-eu { height: 60px; width: auto; }
+.logo-row img.logo-bric { height: 80px; width: auto; }
+.disclaimer { color: $muted; font-size: 0.85rem; max-width: 64ch; }
+
+// Accent touches
+a { text-decoration-color: rgba($accent, 0.55); }
+a:hover { color: $accent; text-decoration-color: $accent; }
+.btn-primary:hover { background: $accent; border-color: $accent; }
+
+// Researcher block
+.person { display: flex; gap: 1.25rem; align-items: flex-start; }
+.person-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid $card; box-shadow: 0 0 0 1px $line; }
+.person-text p { margin-top: 0; }
+@media (max-width: 480px) { .person { flex-direction: column; } }
+
+// Key facts row
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 0.9rem; margin: 1.5rem 0 0.5rem; }
+.fact { border-left: 2px solid $accent; padding: 0.15rem 0 0.15rem 0.9rem; font-size: 0.95rem; color: $ink; line-height: 1.45; }
+.fact .label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: $muted; margin-bottom: 0.2rem; }
+
+// Eligibility lists
+.two-lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 0.9rem; margin: 0.5rem 0 1rem; }
+.list-col { background: $card; border: 1px solid $line; border-top: 3px solid $accent; border-radius: 16px; padding: 1rem 1.1rem 0.4rem; }
+.list-col p { margin-bottom: 0.4rem; }
+.list-col ul { padding-left: 1.1rem; margin-bottom: 0.6rem; }
+.list-col li { margin-bottom: 0.2rem; }
+
+// Quieter background sections at the end of the page
+.background { border-top: 1px solid $line; margin-top: 3rem; padding-top: 0.5rem; }
+.background h2 { font-size: 1.1rem; color: $muted; font-weight: 500; margin-top: 1.75rem; }
+.background p { font-size: 0.97rem; }
+.background .disclaimer, .background .disclaimer p { font-size: 0.85rem; }
+
+// Step numbers, arrows and connectors
+.step::before { background: $accent; color: #fff; }
+.step:not(:last-child)::after { color: $accent; }
+@media (max-width: 767px) { .step:not(:last-child)::after { background: $accent; } }
