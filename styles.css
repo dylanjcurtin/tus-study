@@ -1,0 +1,42 @@
+/* Inter, self-hosted so pages make no requests to Google */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/inter-400.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/inter-500.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/inter-600.woff2") format("woff2"); }
+
+.lead-text { font-size: 1.2rem; color: #5d5d5d; margin-bottom: 1.5rem; max-width: 58ch; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  margin: 1.25rem 0;
+  counter-reset: step;
+}
+.step { position: relative; padding: 1rem 1.1rem; counter-increment: step; }
+.step::before {
+  content: counter(step);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.75rem; height: 1.75rem; border-radius: 50%;
+  font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;
+}
+/* arrow between cards on wide screens */
+.step:not(:last-child)::after {
+  content: "→";
+  position: absolute; right: -1.3rem; top: 50%; transform: translateY(-50%);
+  font-size: 1.1rem; line-height: 1;
+}
+/* single column with a connecting line on narrow screens */
+@media (max-width: 767px) {
+  .steps { grid-template-columns: 1fr; gap: 1rem; }
+  .step:not(:last-child)::after {
+    content: ""; right: auto; top: auto; transform: none;
+    left: 1.97rem; bottom: -1rem; width: 2px; height: 1rem;
+  }
+}
+.step .num {
+  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 0.25rem;
+}
+.step h3 { margin: 0 0 0.35rem 0; }
+.step p { margin: 0; font-size: 0.92rem; }
+
