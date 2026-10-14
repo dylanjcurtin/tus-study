@@ -8,6 +8,7 @@ website:
   title: "Ultrasound & mood study"
   site-url: https://dylanjcurtin.github.io/tus-study
   description: "A paid neuroscience research study at the University of Plymouth using MRI and non-invasive ultrasound brain stimulation."
+  search: false
   navbar:
     pinned: true
     left:
@@ -31,8 +32,12 @@ format:
   html:
     theme: [default, custom.scss]
     css: styles.css
-    lightbox: true
     toc: false
+    code-copy: false
+    anchor-sections: false
+    footnotes-hover: false
+    citations-hover: false
+    include-after-body: prefetch.html
     link-external-newwindow: true
     date-modified: last-modified
     # Remove the next three lines once ethics has approved the site, so search engines can list it
